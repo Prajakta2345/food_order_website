@@ -1,0 +1,125 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+    <style>
+.order .row{
+    padding:1.5rem;
+    box-shadow: 0 .5rem 1rem rgba(0,0,0,.1);
+    background:rgb(239, 236, 236);
+    display: flex;
+    width: 900px;
+    margin-left:300px;
+    gap:1.5rem;
+    border-radius: .5rem;
+    margin-bottom: 30px;
+  }
+  
+ .heading{
+    
+    text-align: center;
+    font-size: 3rem;
+    padding:10px;
+    color:#666;
+    margin-top: 20px;
+  }
+  
+ .order .row form .inputBox{
+    display: flex;
+   
+    height: 60px;
+    width: 800px;
+    gap: 30px;
+  }
+  
+  .order .row form .inputBox input, .order .row form textarea{
+    padding:1rem;
+    margin:1rem 0;
+    font-size: 1.4rem;
+    color:#333;
+    text-transform: none;
+    border:.1rem solid rgba(0,0,0,.3);
+   
+   
+  }
+  
+  .order .row form textarea{
+    width:100%;
+    resize: none;
+    height:5rem;
+  }
+  
+  .order .row form .btn{
+   width: 100px;
+   font-size:20px;
+   padding: auto;
+   border: 2px solid red;
+   color: red;
+   border-radius: 5px;
+   margin-left: 350px;
+   cursor: pointer;
+  }
+  
+  .order .row form .btn:hover{
+    background:var(--red);
+  }
+    </style>
+</head>
+<body>
+    <section class="order" id="order" >
+    
+        <h1 class="heading"> Order Place Here </h1>
+    
+        <div class="row">
+    <!--         
+            <div class="image">
+                <img src="images/order-img.jpg" alt="">
+            </div> -->
+    
+            <form >
+    
+                <div class="inputBox"  >
+                    <input type="text" placeholder="Name" id="name" style="width: 410px; " required>
+                    <input type="email" placeholder="Email" id="email" style="width: 410px;" required>
+                </div>
+    
+                <div class="inputBox">
+                    <input type="number" placeholder="Number" id="num" style="width: 410px; " required>
+                    <input type="text" placeholder="Food name" id="food" style="width: 410px; " required>
+                </div>
+    
+                <textarea placeholder="Address" name="" id="address" cols="20" rows="5"></textarea>
+    
+                <input type="submit" value="Submit" class="btn">
+    
+            </form>
+    
+        </div>
+    
+    </section>
+</body>
+</html>
+<script>
+document.querySelector("form").addEventListener("submit", butFunction)
+
+var arrData=JSON.parse(localStorage.getItem("data"))||[];
+
+function butFunction(){
+    event.preventDefault();
+
+    var dataobj={
+        name:document.querySelector("#name").value,
+        email:document.querySelector("#email").value,
+        number:document.querySelector("#num").value,
+        food:document.querySelector("#food").value,
+        address:document.querySelector("#address").value,
+    }
+       arrData.push(dataobj);
+       localStorage.setItem("data",JSON.stringify (arrData));
+       alert("successful order place")
+       window.location.href="index.html";
+}
+</script>
