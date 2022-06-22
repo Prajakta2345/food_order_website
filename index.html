@@ -1,5 +1,6 @@
 <!DOCTYPE html>
 <html lang="en">
+
 <head>
     <meta charset="UTF-8">
     <meta http-equiv="X-UA-Compatible" content="IE=edge">
@@ -7,40 +8,48 @@
     <title>Food Website</title>
     <link rel="stylesheet" href="index.css">
     <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/5.15.1/css/all.min.css"
-    integrity="sha512-+4zCK9k+qNFUR5X+cKL9EIR+ZOhtIloNl9GIKS57V1MyNsYpYcUrUeQc9vNfzsWfV28IaLL3i96P9sdNyeRssA==" 
-    crossorigin="anonymous" />
+        integrity="sha512-+4zCK9k+qNFUR5X+cKL9EIR+ZOhtIloNl9GIKS57V1MyNsYpYcUrUeQc9vNfzsWfV28IaLL3i96P9sdNyeRssA=="
+        crossorigin="anonymous" />
     <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/4.7.0/css/font-awesome.min.css">
 </head>
+
 <body>
     <nav>
-        <div class="title" style="display:flex ; width: 96%; height: 80px; background-color: rgb(233, 218, 134);">
-           <a href="index.html"><img src="./images/foodie hunter.png" alt="loading"></a>
-            <i class="fa fa-cart-plus" id="cart-plus">  Items</i>
+        <div class="title" style="display:flex ; width: 96%; height: 80px; background-color: rgb(238, 219, 113);">
+            <a href="index.html"><img src="./images/foodie hunter.png"></a>
+            <div class="add-box">
+                <i class="fa fa-map-marker your-address" id="add-address"> Your Address</i>
+            </div>
+            <div class="util" style="padding-top: 20px;">
+                <a href="" style="padding-left:500px ;">Home</a>
+                <a href="login.html">Account</a>
+            </div>
+            <i class="fa fa-cart-plus" id="cart-plus"> Items</i>
         </div>
     </nav>
 
     <!-- desktop view -->
     <div class="container" id="container">
         <div id="menu">
-           
-            
+
+
         </div>
-        
+
         <div id="food-container">
-            
-            <div id="header" >
-                
-             
-               
+
+            <div id="header">
+
+
+
             </div>
-        
+
             <div id="food-items" class="d-food-items">
                 <div id="biryani" class="d-biryani">
-                    <p id="category-name">Biryani</p>    
+                    <p id="category-name">Biryani</p>
                 </div>
 
                 <div id="chicken" class="d-chicken">
-                    <p id="category-name">Chicken Delicious</p>    
+                    <p id="category-name">Chicken Delicious</p>
                 </div>
 
                 <div id="paneer" class="d-paneer">
@@ -48,11 +57,11 @@
                 </div>
 
                 <div id="vegetable" class="d-vegetable">
-                    <p id="category-name">Pure Veg Dishes</p> 
+                    <p id="category-name">Pure Veg Dishes</p>
                 </div>
 
                 <div id="chinese" class="d-chinese">
-                    <p id="category-name">Chinese Corner</p> 
+                    <p id="category-name">Chinese Corner</p>
                 </div>
 
                 <div id="south-indian" class="d-south-indian">
@@ -71,28 +80,25 @@
                         <td>Price</td>
                     </thead>
                     <tbody id="table-body">
-                        
+
                     </tbody>
                 </table>
-                <div class="btn-box">
-                    <button class="cart-btn"><a href="checkout.html">Checkout</a></button>
-                </div>
             </div>
         </div>
 
         <div id="cart">
-            <div class="taste-header">
-               
-            </div>
+            <!-- <div class="taste-header">
+
+            </div> -->
             <div id="category-list">
                 <p class="item-menu">Menu</p>
-                <div class="border"></div>                
+                <div class="border"></div>
             </div>
             <div id="checkout" class="cart-toggle">
                 <p id="total-item">Total Item : 5</p>
                 <p id="total-price"></p>
                 <p id="delievery">Free delievery on $ 40</p>
-                <button class="cart-btn"><a href="checkout.html">Checkout</a></button>
+                <button class="cart-btn"><a href="checkout.html">ORDER</a></button>
             </div>
         </div>
     </div>
@@ -101,37 +107,38 @@
     <!-- mobile view -->
     <div id="mobile-view" class="mobile-view">
         <div class="mobile-top">
-            <div class="logo-box">
+            <!-- <div class="logo-box">
                 <img src="./images/foodielogo.png" alt="" id="logo">
                 <i class="fa fa-map-marker your-address" id="m-add-address"> Your Address</i>
-            </div>
+            </div> -->
             <div class="top-menu">
-                <i class="fa fa-search"></i>
-                <i class="fa fa-tag"></i>
+                <!-- <i class="fa fa-search"></i>
+                <i class="fa fa-tag"></i> -->
                 <i class="fa fa-heart-o"></i>
                 <i class="fa fa-cart-plus" id="m-cart-plus"> 0</i>
             </div>
         </div>
-        
+
         <div class="item-container">
-            <div class="category-header" id="category-header">  
+            <div class="category-header" id="category-header">
             </div>
 
-          </div>    
-          </div>
-       
+        </div>
     </div>
-   
- <!-- review section starts  -->
-    
-    <section class="review" id="review" style="background-color:whitesmoke;">
-    
+
+    </div>
+
+    <!-- review section starts  -->
+
+    <section class="review" id="review" style="background-color:rgb(221, 219, 219);">
+
         <h1 class="heading"> our customers review </h1>
-    
+
         <div class="box-container">
-    
+
             <div class="box">
-                <img src="https://media.istockphoto.com/photos/smiling-indian-man-looking-at-camera-picture-id1270067126?k=20&m=1270067126&s=612x612&w=0&h=ZMo10u07vCX6EWJbVp27c7jnnXM2z-VXLd-4maGePqc=">
+                <img
+                    src="https://media.istockphoto.com/photos/smiling-indian-man-looking-at-camera-picture-id1270067126?k=20&m=1270067126&s=612x612&w=0&h=ZMo10u07vCX6EWJbVp27c7jnnXM2z-VXLd-4maGePqc=">
                 <h3>ramanie deo</h3>
                 <div class="stars" style="color:gold ;">
                     <i class="fas fa-star"></i>
@@ -140,68 +147,50 @@
                     <i class="fas fa-star"></i>
                     <i class="far fa-star"></i>
                 </div>
-                <p>“The food was excellent and so was the service. I had the mushroom risotto with scallops which was awesome. They were very conscientious about gluten allergies. ”</p>
+                <p>“The food was excellent and so was the service. I had the mushroom risotto with scallops which was
+                    awesome. They were very conscientious about gluten allergies. ”</p>
             </div>
             <div class="box">
-                <img src="https://images.unsplash.com/photo-1506794778202-cad84cf45f1d?ixlib=rb-1.2.1&ixid=MnwxMjA3fDB8MHxzZWFyY2h8Mnx8bWFuJTIwcG9ydHJhaXR8ZW58MHx8MHx8&w=1000&q=80">
+                <img
+                    src="https://images.unsplash.com/photo-1506794778202-cad84cf45f1d?ixlib=rb-1.2.1&ixid=MnwxMjA3fDB8MHxzZWFyY2h8Mnx8bWFuJTIwcG9ydHJhaXR8ZW58MHx8MHx8&w=1000&q=80">
                 <h3>Ramanie deo</h3>
-                <div class="stars"style="color:gold ;">
+                <div class="stars" style="color:gold ;">
                     <i class="fas fa-star"></i>
                     <i class="fas fa-star"></i>
                     <i class="fas fa-star"></i>
                     <i class="far fa-star"></i>
                     <i class="far fa-star"></i>
                 </div>
-                <p>“The food was excellent and so was the service. I had the mushroom risotto with scallops which was awesome. They were very conscientious about gluten allergies. ”</p>
+                <p>“The food was excellent and so was the service. I had the mushroom risotto with scallops which was
+                    awesome. They were very conscientious about gluten allergies. ”</p>
             </div>
             <div class="box">
-                <img src="https://media.istockphoto.com/photos/headshot-portrait-of-happy-mixed-race-african-girl-wearing-glasses-picture-id1144287292?k=20&m=1144287292&s=612x612&w=0&h=gaoqkiL6LFzghQfAQ9q8SbLUqtMIpzJNaKCegS3Wjmw=" alt="">
-                <h3>john deo</h3>
-                <div class="stars"style="color:gold ;">
+                <img src="https://media.istockphoto.com/photos/headshot-portrait-of-happy-mixed-race-african-girl-wearing-glasses-picture-id1144287292?k=20&m=1144287292&s=612x612&w=0&h=gaoqkiL6LFzghQfAQ9q8SbLUqtMIpzJNaKCegS3Wjmw="
+                    alt="">
+                <h3>John deo</h3>
+                <div class="stars" style="color:gold ;">
                     <i class="fas fa-star"></i>
                     <i class="fas fa-star"></i>
                     <i class="fas fa-star"></i>
                     <i class="fas fa-star"></i>
                     <i class="far fa-star"></i>
                 </div>
-                <p>“The food was excellent and so was the service. I had the mushroom risotto with scallops which was awesome. They were very conscientious about gluten allergies. ”</p>
+                <p>“The food was excellent and so was the service. I had the mushroom risotto with scallops which was
+                    awesome. They were very conscientious about gluten allergies. ”</p>
             </div>
-    
+
         </div>
-    
-    </section>
-    
-    <!-- review section ends -->
-    <section class="order" id="order" >
-    
-        <h1 class="heading"> Order Place Here </h1>
-    
-        <div class="row">
-    
-    
-            <form action="">
-    
-                <div class="inputBox"  >
-                    <input type="text" placeholder="name" style="width: 410px; ">
-                    <input type="email" placeholder="email" style="width: 410px;">
-                </div>
-    
-                <div class="inputBox">
-                    <input type="number" placeholder="number" style="width: 410px; ">
-                    <input type="text" placeholder="food name" style="width: 410px; ">
-                </div>
-    
-                <textarea placeholder="address" name="" id="" cols="20" rows="5"></textarea>
-    
-                <input type="submit" value="Submit" class="btn">
-    
-            </form>
-    
-        </div>
-    
+
     </section>
 
-    </body>
-</html>
-<script src="index.js" type="module"></script>
+    <script src="index.js" type="module"></script>
     <script src="fooditem.js" type="module"></script>
+
+
+
+    <!-- -----------------------------database------------------------- -->
+
+  
+</body>
+
+</html>

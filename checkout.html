@@ -1,125 +1,111 @@
 <!DOCTYPE html>
 <html lang="en">
+
 <head>
     <meta charset="UTF-8">
     <meta http-equiv="X-UA-Compatible" content="IE=edge">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
+
+<link rel="stylesheet" href="index.css">
     <title>Document</title>
-    <style>
-.order .row{
-    padding:1.5rem;
-    box-shadow: 0 .5rem 1rem rgba(0,0,0,.1);
-    background:rgb(239, 236, 236);
-    display: flex;
-    width: 900px;
-    margin-left:300px;
-    gap:1.5rem;
-    border-radius: .5rem;
-    margin-bottom: 30px;
-  }
-  
- .heading{
-    
-    text-align: center;
-    font-size: 3rem;
-    padding:10px;
-    color:#666;
-    margin-top: 20px;
-  }
-  
- .order .row form .inputBox{
-    display: flex;
    
-    height: 60px;
-    width: 800px;
-    gap: 30px;
-  }
-  
-  .order .row form .inputBox input, .order .row form textarea{
-    padding:1rem;
-    margin:1rem 0;
-    font-size: 1.4rem;
-    color:#333;
-    text-transform: none;
-    border:.1rem solid rgba(0,0,0,.3);
-   
-   
-  }
-  
-  .order .row form textarea{
-    width:100%;
-    resize: none;
-    height:5rem;
-  }
-  
-  .order .row form .btn{
-   width: 100px;
-   font-size:20px;
-   padding: auto;
-   border: 2px solid red;
-   color: red;
-   border-radius: 5px;
-   margin-left: 350px;
-   cursor: pointer;
-  }
-  
-  .order .row form .btn:hover{
-    background:var(--red);
-  }
-    </style>
 </head>
+
 <body>
-    <section class="order" id="order" >
-    
+    <section class="order" id="order">
+
         <h1 class="heading"> Order Place Here </h1>
-    
+
         <div class="row">
-    <!--         
+            <!--         
             <div class="image">
                 <img src="images/order-img.jpg" alt="">
             </div> -->
-    
-            <form >
-    
-                <div class="inputBox"  >
+
+            <form id="form">
+
+                <div class="inputBox">
                     <input type="text" placeholder="Name" id="name" style="width: 410px; " required>
                     <input type="email" placeholder="Email" id="email" style="width: 410px;" required>
                 </div>
-    
+
                 <div class="inputBox">
-                    <input type="number" placeholder="Number" id="num" style="width: 410px; " required>
-                    <input type="text" placeholder="Food name" id="food" style="width: 410px; " required>
+                    <input type="number" placeholder="Mobile No." id="mobile" style="width: 410px; " required>
+                    <input type="text" placeholder="Food name" id="foodname" style="width: 410px; " required>
                 </div>
-    
+
                 <textarea placeholder="Address" name="" id="address" cols="20" rows="5"></textarea>
-    
-                <input type="submit" value="Submit" class="btn">
-    
+
+                <input type="submit" value="Submit" onclick="senddata()" class="btn" id="Btn">
+
             </form>
-    
+
         </div>
-    
+
     </section>
+
 </body>
+
 </html>
-<script>
-document.querySelector("form").addEventListener("submit", butFunction)
 
-var arrData=JSON.parse(localStorage.getItem("data"))||[];
 
-function butFunction(){
-    event.preventDefault();
+<script type="module">
+    // Import the functions you need from the SDKs you need
+    import { initializeApp } from "https://www.gstatic.com/firebasejs/9.8.3/firebase-app.js";
+    import { getDatabase, push, get, ref, set } from "https://www.gstatic.com/firebasejs/9.8.3/firebase-database.js";
+    
+    // TODO: Add SDKs for Firebase products that you want to use
+    // https://firebase.google.com/docs/web/setup#available-libraries
 
-    var dataobj={
-        name:document.querySelector("#name").value,
-        email:document.querySelector("#email").value,
-        number:document.querySelector("#num").value,
-        food:document.querySelector("#food").value,
-        address:document.querySelector("#address").value,
+    // Your web app's Firebase configuration
+    const firebaseConfig = {
+        apiKey: "AIzaSyBOZP4DLZmnvd5l7YtHJmgBq0k-myUZg5k",
+        authDomain: "food-order-823b4.firebaseapp.com",
+        databaseURL: "https://food-order-823b4-default-rtdb.firebaseio.com",
+        projectId: "food-order-823b4",
+        storageBucket: "food-order-823b4.appspot.com",
+        messagingSenderId: "752189562781",
+        appId: "1:752189562781:web:aa22bbedee344505355974"
+    };
+
+    // Initialize Firebase
+    const app = initializeApp(firebaseConfig);
+    const database = getDatabase(app);
+
+
+    document.getElementById('form').addEventListener('submit', submitForm);
+
+    function submitForm(e) {
+        e.preventDefault();
+
+        var name = getElementVal("name");
+        var email = getElementVal("email");
+        var mobile = getElementVal("mobile");
+        var foodname = getElementVal("foodname");
+        var address = getElementVal("address");
+
+
+        order(name, email, mobile, foodname, address)
+        document.getElementById('form').reset();//to reset the form
+
     }
-       arrData.push(dataobj);
-       localStorage.setItem("data",JSON.stringify (arrData));
-       alert("successful order place")
-       window.location.href="index.html";
-}
+
+    function order(name, email, mobile, foodname, address) {
+        const orders = ref(database, 'order/');
+        const neworder = push(orders);
+
+        set(neworder, {
+            name: name,
+            email: email,
+            mobile: mobile,
+            foodname: foodname,
+            address: address
+        });
+
+    }
+
+    const getElementVal = (id) => {
+        return document.getElementById(id).value;
+    }
+
 </script>

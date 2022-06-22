@@ -17,6 +17,7 @@ const foodItem= [
     img: './images/biryani/Chicken-Biryani-hyd.jpg',
     quantity: 1
 },
+
 {
     id: 3,
     name: 'Egg Biryani',
@@ -399,6 +400,7 @@ const foodItem= [
     img: 'images/south indian/sambhar-vada.jpg',
     quantity: 1
 },
+
 ]
 
 export {foodItem};
