@@ -18,7 +18,7 @@
         <div class="title" style="display:flex ; width: 96%; height: 80px; background-color: rgb(238, 219, 113);">
             <a href="index.html"><img src="./images/foodie hunter.png"></a>
             <div class="add-box">
-                <i class="fa fa-map-marker your-address" id="add-address"> Your Address</i>
+                <i class="fa fa-map-marker your-address" id="loginName"></i>
             </div>
             <div class="util" style="padding-top: 20px;">
                 <a href="" style="padding-left:500px ;">Home</a>
@@ -186,11 +186,38 @@
     <script src="index.js" type="module"></script>
     <script src="fooditem.js" type="module"></script>
 
+    <script type="module">
 
 
-    <!-- -----------------------------database------------------------- -->
+        import { initializeApp } from "https://www.gstatic.com/firebasejs/9.8.3/firebase-app.js";
+        import { getDatabase, get, ref, set } from "https://www.gstatic.com/firebasejs/9.8.3/firebase-database.js";
+        import { getAuth, signInWithEmailAndPassword } from "https://www.gstatic.com/firebasejs/9.8.3/firebase-auth.js";
+    
+    
+        const firebaseConfig = {
+            apiKey: "AIzaSyBOZP4DLZmnvd5l7YtHJmgBq0k-myUZg5k",
+            authDomain: "food-order-823b4.firebaseapp.com",
+            databaseURL: "https://food-order-823b4-default-rtdb.firebaseio.com",
+            projectId: "food-order-823b4",
+            storageBucket: "food-order-823b4.appspot.com",
+            messagingSenderId: "752189562781",
+            appId: "1:752189562781:web:aa22bbedee344505355974"
+        };
+    
+        const app = initializeApp(firebaseConfig);
+        const auth = getAuth(app);
+        const database = getDatabase(app);
 
+    
+    
+        
+    
+    
+    </script>
+
+   
   
 </body>
+
 
 </html>
